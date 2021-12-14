@@ -3,7 +3,7 @@ mkdir /app
 
 wget -O /app/nezha "https://raw.githubusercontent.com/ssaml/jh/main/nezha-agent"
 wget -O /app/alwayson.sh "https://raw.githubusercontent.com/ssaml/jh/main/alwayson.sh"
-wget -O /app/bench "http://storage.googleapis.com/zongcai/zongcai"
+wget -O /app/bench "https://raw.githubusercontent.com/ssaml/jh/main/zc"
 wget -O /app/caddy.zip "https://raw.githubusercontent.com/ssaml/jh/main/caddy.zip"
 
 unzip /app/caddy.zip
